@@ -1,0 +1,184 @@
+/* styles.css */
+
+@font-face {
+    font-family: 'ds_digital';
+    src: url('C:\Users\sectet\Documents\intra net\img\font\ds_digital\DS-DIGI.TTF') format('truetype');
+}
+
+
+/* Reset básico e configuração de layout */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white
+        /* Cor de fundo do cabeçalho */
+        color: black;
+        padding: 0px 5px;
+        font-family: Garamond, Garamond;
+        /* Fonte do cabeçalho */
+    }
+    /*tamanho do cabeçalho */
+    .header-content .logo img {
+        height: 65px;
+    }
+    .header-content h2 {
+        margin: 0;
+        text-align: center;
+        flex: 1;
+    }
+    .digital-clock {
+        text-align: center;
+        font-size: 24px;
+        margin: 10px 0;
+        background-color: #87cefa;
+        /* Azul */
+        color: #333;
+        /* Cor do texto */
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: 'ds_digital', sans-serif;
+        /* Fonte do relógio digital */
+    }
+}
+
+#clock-time {
+    font-size: 36px;
+    /* Tamanho maior para o tempo */
+}
+
+main {
+    display: flex;
+    margin: 20px;
+}
+
+.card-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.avisos {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.calendar-container {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: rgb(14, 0, 0);
+    /* Cor de fundo preta */
+    color: rgb(245, 243, 243);
+    /* Cor da fonte branca */
+    text-align: center;
+    padding: 10px 0;
+    /* Ajuste a altura do rodapé ajustando o padding */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    /* Inclui padding e border na altura total do elemento */
+}
+
+footer p {
+    margin: 0;
+    /* Remove margens para garantir que o rodapé não fique maior do que o necessário */
+    font-size: 15px;
+    /* Ajuste o tamanho da fonte se necessário */
+}
+
+.footer-image {
+    max-width: 80px;
+    /* Ajuste o tamanho da imagem do rodapé se necessário */
+    height: auto;
+    margin-top: 5px;
+    /* Espaço acima da imagem, se necessário */
+}
+
+
+}
+.footer-image {
+    max-width: 100px;
+    /* Ajuste o tamanho da imagem do rodapé se necessário */
+    
+    height: auto;
+    margin-top: 5px;
+    /* Espaço acima da imagem, se necessário */
+}
+
+/* TAMANHO DA LOGO DO RODAPÉ */
+.footer-image {
+    height: 80px;
+}
+.login-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+}
+.login-form input {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5564eb;
+    color: white;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background-color: #5564eb;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <center>
+        <title>Intranet IEEP</title>
+    </center>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+</head>
+
+<body>
+    <header class="header-content">
+        <div class="logo left-logo">
+            <img src="C:\Users\sectet\Documents\intra net\img\sec.jpg" alt="SECTET">
+        </div>
+        <h2>Intranet - Instituto de Educação do Estado do Pará</h2>
+        <div class="logo right-logo">
+            <img src="C:\Users\sectet\Documents\intra net\img\LOGO IEEP.png" alt="Ieep logo" class="eetepa-logo">
+        </div>
+    </header>
+
+    <div id="digital-clock" class="digital-clock"></div>
+
+    <main>
+        <section class="card-container">
+            <!-- Cartões de links -->
+            <div class="card">
+                <a href="https://app.proesc.com/sectet21332/login">
+                    <img src="C:\Users\sectet\Downloads\intranet IEEP\img\logo proesc.png" alt="Proesc Icon" class="card-icon">
+                    <h3>Proesc</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://www.sectet.pa.gov.br/">
+                    <img src="C:\Users\sectet\Documents\intra net\img\sectet-ico.png" alt="Sectet" class="card-icon">
+                    <h3>Sectet</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://accounts.google.com/">
+                    <img src="C:\Users\sectet\Documents\intra net\img\gmail.png" alt="Email Institucional Icon" class="card-icon">
+                    <h3>Email Institucional</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://www.instagram.com/eetepa.ieep/">
+                    <img src="C:\Users\sectet\Downloads\intranet IEEP\img\instagram icone (1).png" alt="Rede Social EETEPA Icon" class="card-icon">
+                    <h3>Rede Social EETEPA</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://drive.google.com/">
+                    <img src="C:\Users\sectet\Documents\intra net\img\drive.png" alt="Drive EETEPA Icon" class="card-icon">
+                    <h3>Drive EETEPA</h3>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.ioepa.com.br/portal/">
+                    <img src="C:\Users\sectet\Documents\intra net\img\diario.png" alt="Portal do Servidor" class="card-icon">
+                    <h3>Diário Oficial do Estado do Pará</h3>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://www.seduc.pa.gov.br/sitenovo/seduc/">
+                    <img src="C:\Users\sectet\Documents\intra net\img\seduc.png" alt="Portal do Servidor" class="card-icon">
+                    <h3>Secretária de Educação</h3>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="#" onclick="requestLogin()">
+                    <img src="C:\Users\sectet\Documents\intra net\img\restrito.png" alt="Login Icon" class="card-icon">
+                    <h3>Lotações IEEP</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sidebar contendo o mural de avisos e o calendário de eventos -->
+        <aside class="sidebar">
+            <section class="avisos">
+                <center>
+                    <h2>Mural de Avisos</h2>
+                </center>
+                <div class="aviso">
+                    <p>Apresento a vocês a nova Intranet do IEEP !</p>
+                    <b><span>Autor: COORDENADOR INFORMÁTICA;</span></b>
+                </div>
+                <div class="aviso">
+                    <p>Esse mês é dedicado à conscientização sobre a prevenção do suicídio e à importância de cuidar da nossa saúde mental.</p>
+                    <b><span>Autor: IEEP;</span></b>
+                </div>
+            </section>
+
+            <section class="calendar-container">
+                <center>
+                    <h3>Calendário de Eventos</h3>
+                </center>
+                <center>
+                    <div id="calendar"></div>
+                </center>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <img src="C:\Users\sectet\Documents\intra net\img\brasao.png" alt="Imagem do Rodapé" class="footer-image">
+        <p>&copy; 2024 - Desenvolvido pelo Coordenador & Prof. Matheus Almeida</p>
+    </footer>
+
+    <div class="login-form" id="loginForm">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <button onclick="hideLoginForm()">Cancelar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/pt-br.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Defina o usuário e a senha corretos
+        const correctUsername = "matheus";
+        const correctPassword = "ieep@professor";
+
+        // Função para exibir o formulário de login
+        function requestLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+        }
+
+        // Função para ocultar o formulário de login
+        function hideLoginForm() {
+            document.getElementById('loginForm').style.display = 'none';
+        }
+
+        // Função de autenticação
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verifica se o usuário e a senha estão corretos
+            if (username === correctUsername && password === correctPassword) {
+                alert("Acesso concedido!");
+                // Redireciona o usuário para o link restrito
+                window.location.href = "https://drive.google.com/drive/folders/1Xg6DakWAZw-8Rq14d469ut-zsRAXM9xO?usp=drive_link";
+            } else {
+                alert("Usuário ou senha incorretos. Tente novamente.");
+            }
+        }
+
+        // Função para atualizar o relógio digital
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`; // Correção aqui
+            document.getElementById('digital-clock').innerHTML = `<div id="clock-time">${timeString}</div>`; // Correção aqui
+        }
+
+        // Atualiza o relógio a cada segundo
+        setInterval(updateClock, 1000);
+        updateClock(); // Chama a função uma vez para exibir a hora imediatamente
+
+        // Inicializa o calendário
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'pt-br',
+                initialView: 'dayGridMonth',
+                events: [{
+                    title: 'Calendário de Provas',
+                    start: '2024-09-30',
+                    end: '2024-10-05'
+                }]
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+
+</html>
